@@ -1,8 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 *,*::before,*::after{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    height: 100%;
+}
 body{
-    background-color: #2b2b2b;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito', sans-serif;
+    background-color: #967259;
+    height: 100%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(../assets/header-background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 6.4em;
+    padding: 1em 5em;
+    box-shadow: 0 0 5px 2px black;
+    
+    .header-text-container{
+        display: flex;
+        flex-direction: column;
+        h1{
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+    }
+    nav{
+        display: flex;
+        gap: 15px;
+        .pages{
+            cursor: pointer;
+            background-color: #ECE0D1;
+            width: 100px;
+            padding: 0.5em;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            transition: 250ms ease-in-out;
+            &:hover{
+                transform: translateY(-5px);
+            }
+            &:active{
+                transform: scale(0.98);
+            }
+        }
+    }
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    flex: 1;
+    padding: 3em 5em;
+}
+.menu-welcome-container{
+    @extend .header-text-container;
+    h1{
+        font-size: 3rem;
+    }
+    .menu-welcome-subtext{
+        font-size: 1.4rem;
+    }
+}
+.menu-item-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    .menu-items{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        img{
+            width: 100%;
+        }
+        .item-name{
+            align-self: center;
+            font-weight: bold;
+        }
+        .item-price{
+            font-weight: bold;
+        }
+    }
+}
+.store-container{
+    display: flex;
+    justify-content: space-between;
+    .visit-container{
+        display: flex;
+        flex-direction: column;
+        h1{
+            font-size: 2.2rem;
+        }
+        .visit-information{
+            display: flex;
+            flex-direction: column;
+            color: #ECE0D1;
+            div{
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 1.1rem;
+            }
+        }
+    }
+    .addnote-container{
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-end;
+        h1{
+            font-size: 2.2rem;
+        }
+        .addnote-information{
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            color: #ECE0D1;
+        }
+    }
+}
+.aboutus-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5em;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 53.125em){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em 3em;
+        .header-subtext{
+            display: none;
+        }
+        .header-text-container{
+            h1{
+                font-size: 1.7rem;
+            }
+        }
+        nav{
+            .pages{
+                font-size: 0.8rem;
+                width: 80px;
+            }
+        }
+    }
+    .content{
+        padding: 1em 3em;
+        justify-content: flex-start;
+    }
+    .menu-welcome-container{
+        h1{
+            font-size: 1.7rem;
+        }
+        .menu-welcome-subtext{
+            font-size: 1.2rem;
+        }
+    }
+    .menu-item-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .store-container{
+        flex-direction: column;
+        gap: 10px;
+        .visit-container{
+            align-items: center;
+            h1{
+                font-size: 1.7rem;
+            }
+            .visit-information{
+                align-items: center;
+                div{
+                    display: flex;
+                    gap: 8px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        .addnote-container{
+            align-items: center;
+            h1{
+                font-size: 1.7rem;
+            }
+            .addnote-information{
+                font-size: 0.9rem;
+                align-items: center;
+            }
+        }
+    }
+
+    .about-header-text{
+        font-size: 1.7rem;
+    }
+
+    .aboutus-container{
+        gap: 1em;
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 26.25em){
+    header{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em 1.5em;
+        .header-subtext{
+            display: none;
+        }
+        .header-text-container{
+            h1{
+                font-size: 1.5rem;
+            }
+        }
+        nav{
+            .pages{
+                font-size: 0.7rem;
+                width: 60px;
+            }
+        }
+    }
+    .content{
+        padding: 1em 1.5em;
+        justify-content: flex-start;
+    }
+    .menu-welcome-container{
+        h1{
+            font-size: 1.5rem;
+        }
+        .menu-welcome-subtext{
+            font-size: 0.9rem;
+        }
+    }
+    .menu-item-container{
+        grid-template-columns: 1fr 1fr;
+    }
+    .store-container{
+        flex-direction: column;
+        gap: 10px;
+        .visit-container{
+            align-items: center;
+            h1{
+                font-size: 1.5rem;
+            }
+            .visit-information{
+                align-items: center;
+                div{
+                    display: flex;
+                    gap: 8px;
+                    font-size: 0.8rem;
+                }
+            }
+        }
+        .addnote-container{
+            align-items: center;
+            h1{
+                font-size: 1.5rem;
+            }
+            .addnote-information{
+                font-size: 0.8rem;
+                align-items: center;
+            }
+        }
+    }
+
+    .about-header-text{
+        font-size: 1.5rem;
+    }
+
+    .aboutus-container{
+        gap: 1em;
+        font-size: 0.9rem;
+    }
 }
